@@ -29,7 +29,10 @@ import * as actions from "../actions";
 
 import Header from "./Header";
 import ProductList from "./products/ProductList";
-// const Header = ()=> <div>Header</div>
+import Dashboard from './admin/Dashboard';
+import Products from './admin/Products';
+import NewProduct from './admin/products/NewProduct';
+
 // import Landing from "./Landing";
 // import Dashboard from "./Dashboard";
 // Header will always show
@@ -46,8 +49,10 @@ class App extends Component{
                 <BrowserRouter>
                     <div>
                         <Header />
-                        {/*<ProductList />*/}
                         <Route exact path="/products" component={ProductList} />
+                        <Route exact path="/admin/dashboard" component={Dashboard}/>
+                        <Route exact path="/admin/products" component={Products}/>
+                        <Route exact path="/admin/products/new" component={NewProduct}/>
                     </div>
                 </BrowserRouter>
             </div>

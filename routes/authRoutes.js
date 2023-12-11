@@ -9,7 +9,10 @@ module.exports = (app)=>{
 
     app.get('/auth/google/callback', passport.authenticate('google'), (req, res)=>{
         console.log(req.user)
-        res.redirect('/');
+        if(req.user && req.user.email === 'albametushaj99@gmail.com')
+            res.redirect('/admin/dashboard');
+        else
+            res.redirect('/');
     });
 
     app.get('/api/logout', (req, res)=>{

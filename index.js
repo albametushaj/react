@@ -8,6 +8,7 @@ require('./models/Products');
 require('./services/passport');
 const authRoutes = require('./routes/authRoutes');
 const productRoutes = require('./routes/productRoutes');
+const adminRoutes = require('./routes/adminRoutes');
 
 mongoose.connect(keys.mongoURI);
 
@@ -24,5 +25,7 @@ app.use(passport.session());
 
 authRoutes(app);
 productRoutes(app);
+adminRoutes(app);
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
